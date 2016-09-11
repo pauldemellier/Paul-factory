@@ -1,0 +1,201 @@
+/* --------- FILTRE ---------- */
+
+.vp-style-mon-style .viba-portfolio-filter-list {
+    margin: auto;
+    text-align: center;
+    padding-bottom: 15px;
+    width: 100%;
+
+    a {
+        padding: 0px 14px;
+        color: $greyopacity3;
+        margin: 0 5px;
+        line-height: 2.2em;
+        white-space: nowrap;
+        background-color: transparent;
+        border: none;
+        @include transition(all $fasttime ease-in-out);
+    }
+
+    a:hover {
+        color: $darkblue;
+    }
+    .selected, a:active {
+        color:$red !important;
+    }
+}
+.viba-portfolio-filter {
+    ul {
+        padding: 0 !important;
+        margin: 0 !important;
+        @include radius;
+        background-color: $greyopacity03;
+    }
+    li {
+        margin-bottom: 8px;
+        margin-top: 8px;
+    }
+}
+
+/* --------- LOADER ---------- */
+
+/*
+.js-vp-loading .vp-loader-1::before, .js-vp-loading .vp-loader-1, .vp-loader {
+
+background-image: url(images/logo.png);
+background-size: 60%;
+background-position: 50%;
+background-repeat: no-repeat;
+
+width: 80px;
+height: 80px;
+border-radius: 50%;
+}
+
+*/
+.vp-loader, .vp-loader::before {
+    background-color: transparent !important;
+}
+.vp-loader {
+    background-image: url(images/gear.png);
+    background-size: 70%;
+    background-position: 50%;
+    background-repeat: no-repeat;
+}
+
+.vp-loader-1::before, .vp-loader-2::before {
+    content: "" !important;
+
+}
+
+.js-vp-loading {
+    .vp-loader-2 {
+        @include animation(rotation 4s infinite linear);
+    }
+}
+
+
+.viba-portfolio-loader {
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    margin:auto;
+}
+
+
+
+.vp-modal-scale.js-vp-ajax-modal .vp-ajax-content {
+    @include transform(scale(1.05));
+}
+
+.vp-modal-scale.js-vp-ajax-modal.js-vp-ajax-ready .vp-ajax-content {
+    @include transform(scale(1));
+}
+
+.js-vp-loading .vp-loader-1 {
+    @include animation(loadercustom infinite linear $normaltime2);
+}
+
+.overflowbody {
+    overflow: hidden !important;
+}
+
+
+/* --------- VIGNETTES ---------- */
+
+
+.viba-portfolio-media img, .viba-portfolio-thumbnail, .viba-portfolio-cover, .viba-portfolio-overlay{
+    @include transition(opacity $fasttime1, transform $fasttime1);
+}
+.vp-zoom-out .viba-portfolio-cover, .vp-zoom-out-image .viba-portfolio-thumbnail {
+    @include transform(scale3d( 1, 1, 1));
+}
+.vp-zoom-out-image .viba-portfolio-item-inner:hover .viba-portfolio-thumbnail {
+    @include transform(scale3d( 1.1, 1.1, 1.1));
+}
+
+
+.viba-portfolio-filter li a {
+}
+
+.subtitle {
+    font-size: $fontsize1;
+    font-family: $font-texts;
+    font-weight:$light;
+    padding-top: 20px;
+}
+
+.more-work {
+    margin-top: 50px;
+    text-align: center;
+
+    p {
+        margin: 35px 0;
+    }
+}
+.container.projects {
+    .ssba {
+        display: none;
+    }
+}
+
+
+/* ----------------------- RESPONSIVE ----------------------- */
+
+@media screen and (max-width: $normal-desktop) {
+
+    .-skin-default .-items .-item {
+        width: 48%;
+    }
+
+    .-skin-default .-items .-item .itembox .-mask {
+        bottom: 0;
+        top: initial;
+        height: 100px;
+        opacity: 1;
+        background-color: initial;
+        /*@include linear-gradient(rgba($cleargrey, .0) 0%, rgba($cleargrey, .1) 15%, rgba($cleargrey, .8) 100%);*/
+        background-image: url('images/gradient-thumbnail2.png');
+        background-repeat: no-repeat;
+        background-position-x: center;
+
+        .center {
+            top: 45px;
+            height: initial;
+            font-size: 18px;
+            border-top: 1px solid $greyopacity2;
+            padding-top: 10px;
+            width: 80%;
+            color: $darkblue;
+
+            span {
+                border-bottom: none;
+            }
+        }
+    }
+    .subtitle {
+        display: none;
+    }
+    .container.projects {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+}
+
+@media screen and (min-width: 1400px) {
+    .vp-col-dl-3 .viba-portfolio-item {
+        width: 33.3% !important;
+    }
+}
+@media screen and (max-width: 960px) {
+    .vp-style-accueil li:last-child {
+        display: none;
+    }
+}
+@media screen and (max-width: 660px) {
+    .more-work span{
+        display: none;
+    }
+}

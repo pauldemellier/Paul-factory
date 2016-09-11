@@ -1,0 +1,45 @@
+@media screen and (max-width: 768px) {  /* ------------------------- 768 ---------- */
+
+	#contactleft {
+		width: 100%;
+		padding-right: 0px;
+	}
+
+	.postmenu {
+
+		.button {
+			background-color: $lesscleargrey;
+		}
+		h3 {
+			color: $greyopacity3;
+			font-size: 16px;
+		}
+	}
+
+	
+	ul#menu-services {
+		.serv {
+			width: 120px;
+			height: 120px;
+			margin-bottom: 15px;
+		}
+		.serv2 {
+			width: 116px;
+			height: 116px;
+		}
+		h3 {
+			font-size: 14px;
+		}
+	}
+	.text {
+		padding-right: 30px;
+	}
+	.service, .logiciels {
+		padding-left: 30px;
+	}
+	.box {
+		padding-top: 20px;
+	}
+
+	
+}

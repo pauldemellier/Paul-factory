@@ -1,0 +1,73 @@
+@media screen and (max-width: 767px) { /* ------------------------- 767 ---------- */
+
+	/* ------------------ HEADER ------------------ */
+
+	header .container, .container {
+		padding-left: 20px;
+		padding-right: 20px;
+		padding-bottom: 60px;
+	}
+	header .container .menu {
+		width: 100%;
+	
+		#logo {
+			float: right;
+		}
+	}
+
+	header {
+		position: absolute;
+	}
+
+	#langue {
+		display: none;
+	}
+	#navigation {
+		display: none;
+	}
+	#button-menu {
+		display: block;
+	}
+
+	.-skin-default .-filters {
+		margin: 0;
+
+		a {
+			margin: 0;
+		}
+	}
+
+	.box2 {
+		.text {
+			width: 100%;
+			padding-right: 0px;
+			padding-bottom: 25px;
+		}
+		.boxservice {
+			border-left:solid 0px $lines;
+			border-top:solid 1px $lines;
+			padding-top: 25px;
+			width:100%;
+		}
+	}
+
+	.error-container {
+        padding-bottom: 60px;
+        
+        #navigation {
+            display: block;
+        }
+    }
+	.-skin-default .-filters {
+		font-size: 14px;
+		text-align: left;
+	} 
+
+	#flags_language_selector {
+		width: 92%;
+		float: left;
+		text-align: left;
+        padding-left: 10px;
+	}
+
+}

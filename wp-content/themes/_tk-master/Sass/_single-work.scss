@@ -1,0 +1,228 @@
+.js-vp-ajax-modal .vp-ajax-content {
+	background-color: $cleargrey;
+}
+.js-vp-ajax-modal {
+	padding: 0;
+	background-color: $blueopacity;
+}
+
+.vp-ajax-actions-wrapper {
+	height: 80px;
+	text-align: center;
+	border-bottom: 1px solid $cleargrey;
+	z-index: 10;
+}
+
+.viba-portfolio-single-item .viba-portfolio-single-tags ul li {
+    display: block;
+}
+
+.vp-ajax-inner .viba-portfolio-item {
+	padding: 40px 0;
+	padding-top: 80px;
+    padding-bottom: 0px;
+}
+.viba-portfolio-gallery-stacked .viba-portfolio-gallery-item {
+    margin-top: 0px;
+}
+
+.vp-ajax-actions a::before {
+	font-family: icomoon;
+}
+
+.vp-ajax-close {
+	border-left: 1px solid $lines !important;
+	border-right: 1px solid $lines !important;
+}
+.vp-ajax-prev::before {
+	content: "\62";
+}
+.vp-ajax-next::before {
+	content: "\65";
+}
+.vp-ajax-close::before {
+	content: "\63";
+}
+.viba-portfolio-media-link {
+    display: none;
+}
+
+
+.vp-ajax-actions-wrapper .vp-ajax-actions a {
+	height: 80px;
+	width: 80px;
+	color: $greyopacity3;
+	border: none;
+	@include transition(all $fasttime);
+
+	&:hover {
+		background-color: $cleargrey;
+		color: $darkblue;
+	}    
+}
+
+.vp-ajax-actions-wrapper .vp-ajax-actions a::before {
+	line-height: 75px;
+	font-size: 25px;
+}
+
+
+.post-intro {
+	max-width: 1100px;
+	margin:auto;
+    padding: 0 40px;
+    
+	.content {
+			width: 70%;
+			float:left;
+			padding-right:$padding-text;
+			border-right: solid 1px $lines;
+			box-sizing: border-box;
+        
+            h1 {
+                margin-bottom: 0px;
+            }
+            h3 {
+                color: $greyopacity30;
+                margin-bottom: 30px;
+            }
+	}
+    
+	.data {
+			width: 30%;
+			float:left;
+			padding-left:$padding-text;
+			box-sizing: border-box;
+
+			div {
+			padding-bottom: 25px;
+			}
+	}
+    .ssba {
+        display: none;
+    }
+}
+
+
+.viba-portfolio-single-media {
+	padding-top: 50px;
+    max-width: 1500px;
+    margin: auto;
+}
+.vp-style-mon-style .viba-portfolio .viba-portfolio-title {
+	font-size: 22px;
+}
+.viba-portfolio-short-description {
+    font-weight: $light;
+}
+
+h1.post-title{
+	text-align:left;
+	padding-bottom:5px;
+}
+.post-info {
+	font-size:14px;
+	opacity:0.5;
+}
+
+.postsubtitle {
+	font-size: 20px;
+	color: $greyopacity3;
+	padding-bottom: 30px;
+}
+
+.postmenu {
+	font-size: 25px;
+	margin-top: 30px;
+	width:500px;
+	display:inline-block;
+	
+	.button {
+		border-radius: 50%;
+		width: 50px;
+		height: 50px;
+		position: absolute;
+		margin-left: -40px;
+		margin-top: -15px;
+		border: $bordersize solid transparent;	
+	}
+.buttoncontainer:active .button {
+	@include activebouton;
+}
+
+	.buttoncontainer:hover .button {
+		/*background-color:$red;*/
+		@include bordure;
+		@include animation(zoom $fasttime1 ease);
+	}
+	a:hover {
+		color:$darkblue;
+	}
+	
+	a, h3, .button {
+		@include transition(all $fasttime1 ease);
+	}
+	
+	h3 {
+		padding-top: 30px;
+		color:transparent;
+	}
+	.buttoncontainer:hover h3 {
+		color:$darkblue;
+		
+	}
+	
+	.buttoncontainer {
+		float:left;
+		width:33.333333%;
+	}
+}
+
+/* ------------------ RESPONSIVE ------------------ */
+
+@media screen and (max-width: $tablet-minus) {
+    
+    .post-intro {
+        padding: 0 20px;
+        
+		.content {
+		width: 100%;
+		padding-right: 0px;
+		border-right: solid 0px $lines;
+		border-bottom: solid 1px $lines;
+		padding-bottom: 30px;
+		}
+		.data {
+			width: 100%;
+			padding-top: 30px;
+			padding-left: 0px;
+			
+			div div {
+				width: 33%;
+				float: left;
+			}
+		}
+		.images {
+			padding-top: 20px;
+		}
+	}
+
+	.vp-ajax-inner .viba-portfolio-item {
+		padding-top: 30px;
+	}
+	.vp-ajax-actions-wrapper {
+		height: 50px;
+
+		.vp-ajax-actions a {
+			height:50px;
+			width:50px;
+		}
+		.vp-ajax-actions a::before {
+			line-height: 50px;
+			font-size: 18px;
+		}
+	}
+	.viba-portfolio-single-media {
+		padding-top:initial;
+	}
+}

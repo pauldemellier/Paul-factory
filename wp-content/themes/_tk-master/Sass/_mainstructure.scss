@@ -1,0 +1,158 @@
+html, body {
+  max-width: 100%;
+}
+
+body {
+  font-family:$font-texts;
+  font-size: $fontsize;
+  color:$darkblue;
+  line-height: 26px;
+  -webkit-font-smoothing: antialiased;
+  margin:0 auto;
+  background: $grey1;
+
+}
+
+img {
+  width:100%;
+}
+/* ----------------------- FOOTER ----------------------- */
+
+footer {
+  text-align: center;
+  background: $grey2;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+
+
+/* ----------------------- SEPARATEURS ----------------------- */
+
+.separator-extra-small {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  clear: both;
+}
+
+.separator-small {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  clear: both;
+}
+
+.separator-big {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  clear: both;
+}
+
+/* ----------------------- RANGEES ----------------------- */
+
+
+.row {
+
+
+  &.margin {
+    margin-bottom: $gutter;
+    @media screen and (max-width: $bootstrap-xs) {
+      margin-bottom: $gutter-small;
+
+      & > div {
+        margin-bottom: $gutter-small;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  &.wide {
+    background: $grey1;
+    position: relative;
+    min-width: 100%;
+    min-height: 100vh;
+    margin-bottom: initial;
+
+
+    &.secondary {
+      background: $grey4;
+    }
+    & > .main-content-inner {
+      margin-top: 160px;
+      margin-bottom: 160px;
+    }
+  }
+}
+
+/* ----------------------- CONTENEURS ----------------------- */
+
+.container {
+  max-width: 1400px;
+  width: 80%;
+
+  @media screen and (max-width: $normal-desktop) {
+    width: 95%;
+  }
+}
+
+.no-padding {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+.no-margin {
+  margin: 0 !important;
+}
+
+
+.full-image {
+  background: url("images/cats.jpg") no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 100vh;
+}
+
+.fixed-image {
+  position: fixed;
+  top: 0;
+  width: 50%;
+  left: 0;
+}
+
+/* ----------------------- MENU HEADER ----------------------- */
+
+.menu {
+  background:white;
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:10;
+  height: 80px;
+  left: 0;
+}
+nav {
+
+  & ul {
+    list-style-type:none;
+    margin:0;
+    padding:0;
+
+    & li {
+      display: inline;
+    }
+  }
+
+  a {
+    font-size: 20px;
+    font-family: $font-titles;
+    line-height: 80px;
+    padding: 30px 10px;
+
+    &.nav-active, &:active {
+      color:$red;
+    }
+  }
+}

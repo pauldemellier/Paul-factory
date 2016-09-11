@@ -1,0 +1,118 @@
+$drawn-icon-bg-size : 150px;
+$icon-bg-size : 60px;
+
+.icons-container {
+  display: flex;
+  justify-content: space-between;
+
+  margin: auto;
+
+  [class^="icon-"], [class*=" icon-"] {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    font-size: 100px;
+  }
+
+  .icon-container {
+    &::before {
+      background: $grey4;
+      border-radius: 50%;
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top:0;
+      left: 0;
+      @include transition-3;
+      opacity: 0;
+    }
+    &:hover::before {
+      @include animation-pop;
+      opacity: 1;
+    }
+    &:hover i {
+      color: $red;
+    }
+  }
+}
+
+footer {
+  .icons-container {
+    width: 50%;
+    max-width: 600px;
+
+    [class^="icon-"], [class*=" icon-"] {
+      width: $icon-bg-size;
+      height: $icon-bg-size;
+      line-height: $icon-bg-size;
+      font-size: 35px;
+    }
+  }
+}
+
+/* -------- ICONES DESSINEES -------- */
+
+.drawn-icons-container {
+  margin: auto;
+  text-align: center;
+
+  h4 {
+    margin-top: 20px;
+  }
+
+  &.big {
+
+    .drawn-icon {
+      width: 210px;
+      height: 210px;
+
+      img.drawn-icon {
+        width: 160px;
+        height: 160px;
+      }
+    }
+  }
+
+  .drawn-icon-container {
+    @include transition-2;
+
+    &:hover .drawn-icon::before {
+      @include animation-pop-2;
+      opacity: 1;
+    }
+    &:hover {
+      color: $red;
+    } 
+  }
+  .drawn-icon {
+    width: $drawn-icon-bg-size;
+    height: $drawn-icon-bg-size;
+    position: relative;
+    margin: auto;
+
+    &::before {
+      background: $red;
+      border-radius: 50%;
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top:0;
+      left: 0;
+      @include transition-2;
+      opacity: 0;
+    }
+  }
+  img.drawn-icon {
+    width: 130px;
+    height: 130px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+}
+

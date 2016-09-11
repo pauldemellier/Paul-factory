@@ -1,0 +1,29 @@
+.konami {
+    z-index: 100000;
+    position: fixed;
+    top: 300px;
+    left: 0;
+    width: 240px;
+    height: 220px;
+    margin: auto;
+    @include transform(translateY(200px));
+    @include transform(translateX(-400px));
+    @include animation(konami 30s linear);
+    @include animation-delay(1s);
+    text-align: right;
+    
+    .insidekonami {
+        @include animation(insidekonami 4s linear);
+        @include animation-iteration-count(infinite);
+        width: 240px;
+        height: 220px;
+        background: url('images/konami-shadow.png');
+        background-size: 200px;
+        background-repeat: no-repeat;
+        background-position: left bottom;
+    }
+    img {
+        width: 200px;
+    }
+}
+

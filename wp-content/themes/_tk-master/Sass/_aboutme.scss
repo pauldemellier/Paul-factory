@@ -1,0 +1,402 @@
+#aboutme {
+    position: relative;
+    border-bottom: 1px solid $lines;
+}
+
+#gifanim {
+    width:108px;
+    opacity:1;
+    @include transition(all $normaltime ease);
+    @include transition-delay($normaltime);
+}
+
+
+#aboutme-photo {
+    width:45%;
+    padding-right: 50px;
+    box-sizing: border-box;
+    line-height: 0;
+    margin-top: -30px;
+    background-image: url('http://dev.paul-factory.fr/wp-content/themes/Paulfactory/images/portrait.png');
+    background-size: auto 100%;
+    background-position-x: right;
+    background-position-y: bottom;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: -50px;
+    top: 0;
+    bottom: 0;
+
+}
+
+.papier {
+    position: absolute;
+    width: 60px;
+    height: 40px;
+    bottom: 318px;
+    right: 100px;
+
+    &:hover::before {
+        content: "Essayez d'écrire 'ilovebears'";
+        padding: 20px;
+        background: $lesscleargrey;
+        width: 230px;
+        position: absolute;
+        top: -50px;
+        left: -90px;
+        border-radius: 5px;
+        @include animation(appeartoplight $fasttime2);
+    }
+}
+
+
+
+
+#aboutme-content {
+    float:right;
+    width:55%;
+    padding-bottom: 40px;
+}
+
+#aboutme-content h1 {
+    text-align:left;
+}
+
+.aboutme-links {
+
+    margin: auto;
+    max-width: 700px;
+    width: 100%;
+    background-size: 100%;
+    padding:60px 0;
+
+    a {
+        float:left;
+        width: 33%;
+    }
+    div {
+        background-size: 100%;
+    }
+
+    h3 {
+        padding-top: 20px;
+        color: $greyopacity3;
+        @include transition(all $fasttime1 ease);
+    }
+    .survol{
+        border-radius:50%;
+        width:130px;
+        height:130px;
+        @include transition(all $fasttime1 ease);
+        border: $bordersize solid transparent;
+        margin: auto;
+        background: transparent;
+        background-size: 100%;
+    }
+
+    a:hover h3 {
+        color: $darkblue;
+    }
+
+    a:hover .survol {
+        @include bordure;
+        @include animation(zoom $fasttime1 ease);
+    }
+    a:hover .survol:active {
+        background-color: $greyopacity1;
+    }
+    a:hover {
+        cursor: pointer;
+    }
+
+    .cv {
+        @include background-image-retina(images/cv, png, 100%, 100%);
+    }
+    .competences {
+        @include background-image-retina(images/competences, png, 100%, 100%);
+    }
+    .contact {
+        @include background-image-retina(images/mail, png, 100%, 100%);
+    }
+}
+
+html:lang(en-US) .aboutme-links {
+    max-width: 500px;
+
+    a:first-child {
+        display: none;
+    }
+    a {
+        width: 50%;
+    }
+}
+
+.active {
+    div {
+        background-color: $red !important;
+    }
+    h3 {
+        color: $red !important;
+    }
+}
+
+/*
+.one-half {
+width: 50%;
+white-space: nowrap;
+float: left;
+padding: 0 30px;
+border-right: 1px solid $whiteopacity3;
+box-sizing: border-box;
+
+table {
+width: 100%;
+
+td {
+vertical-align:middle;
+padding: 5px 10px;
+color: $whiteopacity2;
+}
+tr, td {
+@include transition(all $fasttime1 ease-out);
+}
+
+td:last-child {
+text-align:right;
+color: white;
+}
+td:first-child {
+width:32px;
+font-size: 36px;
+color: $red;
+}
+
+}
+tr:hover td:nth-child(2) {
+color: white;
+}
+.custom {
+font-size: 58px !important;
+position: absolute;
+top: 124px;
+left: -14px;
+}
+}
+.one-half:last-child {
+border: none;
+}
+*/
+
+.row {
+
+    margin: 50px auto;
+    h2 {
+        text-align: center;
+        font-size: 36px;
+        margin-bottom: 60px;
+    }
+    &:first-child {
+        margin-top: 0;
+    }
+    &:last-child {
+        margin-bottom: 0;
+    }
+    .skill-container {
+        float: left;
+        width: 12.6666%;
+        text-align: center;
+        margin: 0px 2% 30px 2%;
+        white-space: nowrap;
+
+        i, h5 {
+            @include transition(all $fasttime1 ease-out);
+        }
+
+        i {
+            font-size: 60px;
+            line-height: 60px;
+            color: $greyopacity2;
+        }
+        p {
+            margin-top: 10px;
+            font-weight: 800;
+        }
+    }
+
+    .photoshop:hover i, .photoshop:hover h5 {
+        color: #25CDF7;
+    }
+    .illustrator:hover i, .illustrator:hover h5 {
+        color: #FF7E18;
+    }
+    .indesign:hover i, .indesign:hover h5 {
+        color: #F03DA3;
+    }
+    .balsamiq:hover i, .balsamiq:hover h5 {
+        color: #000;
+    }
+    .sketch:hover i, .sketch:hover h5 {
+        color: #eb832a;
+    }
+    .blender:hover i, .blender:hover h5 {
+        color: #F1862D;
+    }
+    .edgeanimate:hover i, .edgeanimate:hover h5 {
+        color: #907BFF;
+    }
+    .premierepro:hover i, .premierepro:hover h5 {
+        color: #D856FF;
+    }
+    .aftereffects:hover i, .aftereffects:hover h5 {
+        color: #C489FF;
+    }
+    .dreamweaver:hover i, .dreamweaver:hover h5 {
+        color: #68FC00;
+    }
+    .css3:hover i, .css3:hover h5 {
+        color: #2659A5;
+    }
+    .sass:hover i, .sass:hover h5 {
+        color: #D1629A;
+    }
+    .wordpress:hover i, .wordpress:hover h5 {
+        color: #2583ad;
+    }
+    .jquery:hover i, .jquery:hover h5 {
+        color: white;
+    }
+    .php:hover i, .php:hover h5 {
+        color: #6A7CBB;
+    }
+}
+
+.close {
+    text-align: center;
+    margin-top: 40px;
+    a {
+        padding: 20px;
+    }
+    a:before {
+        content: "\63";
+        font-family: 'icomoon';
+        font-size: 24px;
+    }  
+}
+
+
+/* ----------------------- RESPONSIVE ----------------------- */
+
+@media screen and (max-width: $small-desktop) {
+    .frame {
+        .logiciels {
+            display: block;
+            padding-top:$padding-text;			
+        }
+        .boxservice {
+
+            width:180px;
+        }
+    }
+    #aboutme-photo {
+        width: 52%;
+        background-size: 570px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .row {
+        .skill-container {
+            width: 16%;
+        }
+    }
+}
+@media screen and (max-width: 1024px) {
+    .row {
+        .skill-container {
+            width: 21%;
+        }
+    }
+}
+@media screen and (max-width: $tablet) {
+    .aboutme-links {
+        h3 {
+            margin-bottom: 40px;
+        }
+    }
+    .row {
+        .skill-container {
+            width: 29.3333%;
+        }
+    }
+}
+
+@media screen and (max-width: $tablet-minus) {
+
+    #aboutme-photo {
+        width: 100%;
+        left: 0;
+        background-position-x: center;
+        z-index: 0;
+        opacity:0.2;
+        background-size: auto 100%;
+    }
+
+    #aboutme-content {
+        width: 100%;
+        z-index: 1;
+        position: relative;
+    }
+
+
+    #aboutme-content h1 {
+        text-align:center;
+    }
+
+}
+
+
+
+@media screen and (max-width: $large-mobile) {
+
+    .aboutme-links {
+        padding: 10px 0;
+        padding-bottom: 0;
+
+        a {
+            width: 100% !important;
+            border-bottom: 1px solid $lines;
+            padding: 20px 0;
+        }
+        a:nth-child(3) {
+            border-bottom: none;
+        }
+        h3 {
+            margin-bottom: 0px;
+            padding-top: 10px;
+        }
+    }
+    .row {
+        .skill-container {
+            width: 46%;
+        }
+    }
+}
+
+@media screen and (max-width: $normal-mobile) {
+
+    #aboutme-photo {
+        background-size: contain;
+    }
+
+    .aboutme-links {
+        .survol {
+            width: 100px;
+            height: 100px;
+        }
+    }
+    .row {
+        .skill-container {
+            width: 96%;
+        }
+    }
+}

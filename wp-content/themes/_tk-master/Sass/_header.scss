@@ -1,0 +1,256 @@
+header {
+    height:80px;
+    width:100%;
+    position:fixed;
+    background-color:white;
+    display:block;
+    z-index:200;
+    border-bottom: 1px solid $cleargrey;
+
+
+    .container {
+        padding:0 $padding-cote;
+        height:100%;
+
+        .menu {
+            width:85%;
+
+            #logo {
+                width:47px;
+                margin-top: 13px;
+                margin-right:10px;
+                background-image: url('images/logo2.png');
+                background-repeat: no-repeat;
+                background-size: 47px 50px;
+            }
+            #logo img {
+                opacity:1;
+                @include transition(all .1s ease);
+                @include transition-delay(.05s);
+                height:100%;
+            }
+            #logo:hover img{
+                opacity:0;
+            }
+            #logo:hover{
+                @include animation(logo $fasttime1 ease-in-out);
+            }
+        }
+        #langue {
+            width:15%;
+        }
+    }
+}
+
+
+.menu, #logo, #langue, .frame{
+    float:left;
+}
+
+#navigation {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    line-height: 80px;
+
+    .current_page_item a, .current-page-ancestor a {
+        color:$red;
+        opacity:1;
+    }
+
+
+    li {
+        float:left;
+
+        a {
+            padding: 0 16px;
+            color: $greyopacity3;
+            font-family: $font-titles;
+            font-size: 20px;
+            font-weight: 500;
+            display: inline-block;
+            @include transition(all $fasttime cubic-bezier(0.000, 0.505, 0.575, 1.000));
+            @include transform(scale(1,1));       
+        }		
+    }
+    li:hover a {
+        color: $darkblue;
+        @include transform(scale(1.05,1.05));
+    }
+
+    #en-cours a{
+        color:$red;
+        opacity:1;
+    }
+}
+#flags_language_selector {
+    color:$red;
+    text-align:right;
+    padding: 28px 10px;
+    position: relative;
+
+    a {
+        padding: 30px 0px;
+        @include transition(all $fasttime1 ease);
+        color: $greyopacity3;
+        font-weight: $light;
+    }
+    img {
+        width:27px;
+        position: relative;
+        opacity: 0;
+        left: 20px;
+        top: 3px;
+        margin-right: -5px;
+        margin-left: -5px;
+        @include transition(all $fasttime1 ease);
+
+    }
+    a:hover img {
+        @include animation(flag $fasttime1 ease-in-out);
+        opacity: 1;
+    }
+    a:hover {
+        color:white;
+    }
+}
+
+
+
+
+#button-menu {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(white, .8);
+    display: none;
+    position: fixed;
+    z-index: 300;
+    border-radius: 50%;
+    margin-top: 15px;
+    margin-left: 10px;
+    @include transition(all .9s ease-in-out);
+
+    .sb-open {
+        font-size: 24px;
+        line-height: 30px;
+        @include transition(all $fasttime ease-in-out);
+    }
+
+    &:hover {
+        color: $red;
+        position: fixed;
+    }	
+}
+
+.sb-menu {
+    background-color: $lesscleargrey;
+    position: fixed;
+    z-index: 1000;
+    width: 160px;
+    height: 100%;
+    box-sizing: border-box;
+    @include transform(translateX(-200px));
+
+    .top {
+        background-color: white;
+        height: 80px;
+        width: 100%;
+        text-align: center;
+
+        img {
+            width: 47px;
+            padding-top: 14px;
+        }
+    }
+
+
+    ul {
+        list-style: none;
+        padding-left: 25px;
+        float: left;
+
+        li {
+            padding: 10px 0;
+        }
+        a {
+            @include transition(all $fasttime ease-in-out);
+            font-weight: 500;
+            font-size: 20px;
+            font-family: $font-titles;
+        }
+        a:hover {
+            color: $red;
+        }
+    }
+    div {
+        width:47px;
+        margin: auto;
+    }
+}
+
+.move-menu {
+    @include transform(translateX(0px));
+}
+.move-site {
+    @include transform(translateX(120px));
+}
+.shadow, .shadow2 {
+    width:100%;
+    height:100%;
+    position: fixed;
+    z-index: 900;
+    visibility: hidden;
+    opacity: 0;
+    background-color: #000;
+}
+.showshadow {
+    visibility: visible;
+    opacity: 0.8;
+}
+#sb-site, .sb-menu, .shadow, .shadow2 {
+    @include transition(all $fasttime3 ease-in-out);
+}
+
+/* ----------------------- RESPONSIVE ----------------------- */
+
+@media screen and (max-width: $normal-desktop) { 
+
+    header .container, .container {
+        padding-left: 30px;
+        padding-right: 30px;
+
+    }
+}
+@media screen and (max-width: $large-mobile) { 
+
+    .sb-menu {
+        .top {
+            height: 60px;
+
+            img {
+                width: 40px;
+                padding-top: 9px;
+                height: initial;
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width: $normal-mobile) {  
+    .sb-menu {
+        width: 50%;
+        @include transform(translateX(-100%));
+    }
+    .move-site {
+        @include transform(translateX(100px));
+    }
+    .move-menu {
+        @include transform(translateX(0px));
+    }
+    .sb-slidebar {
+        width: 50%;
+    }
+}

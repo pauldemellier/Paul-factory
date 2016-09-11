@@ -1,0 +1,221 @@
+#homecontainer {
+    max-width: $largeur;
+    padding: 0 80px;
+    margin: auto;
+}
+
+#home {
+    width: 410px;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    position: absolute;
+    height: 400px;
+    text-align:left;
+    z-index:2;
+
+    h1 {
+        text-align:left;
+    }
+}
+
+
+
+
+
+#ville {
+    background-image: url(images/ville2.png);
+    background-repeat:no-repeat;
+    position: absolute;
+    background-size:1900px;
+    width: 71%;
+    height: 100%;
+    background-position-y: bottom;
+    right: 0;
+    bottom: 0;
+    margin-bottom: 60px;
+    @include animation(float2 15s infinite);
+    @include transition(all $normaltime2 ease-in-out);
+}
+
+#observatoire {
+    background-image: url(images/observatoire.png);
+    background-repeat:no-repeat;
+    position: absolute;
+    background-position-y: bottom;
+    left: 0;
+    bottom: 0;
+    height:100%;
+    width:40%;
+    margin-left: initial;
+    background-size: 700px;
+    @include animation(float 15s infinite);
+    @include animation-timing-function(ease-in-out);
+}
+
+#transporteur {
+    background-image: url(images/transporteur.png);
+    background-repeat:no-repeat;
+    background-position: right top;
+    background-size:200px;
+    position: absolute;
+    height: 500px;
+    width:23%;
+    bottom:0px;
+}
+
+#ville, #transporteur {
+    @include animation(float2 15s infinite);
+    @include animation-timing-function(ease-in-out);
+}
+
+
+footer.accueil {
+    z-index: 10;
+    background: transparent;
+    padding: 40px;
+    padding-bottom: 0;
+    margin: auto;
+    left: 0;
+    right: 0;
+    height: 80px;
+    max-width: 500px;
+}
+.social-home {
+    padding-top: 25px;
+    display: none;
+    position: relative;
+    @include transition(all $fasttime3 ease);
+    @include animation(appeartop-reverse $fasttime3);
+    @include animation-fill-mode(forwards);
+}
+
+.social-link-home {
+    opacity: 1;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    @include transition(all $fasttime3 ease);
+    top: 30px;
+}
+
+.show {
+    @include animation(appeartop $fasttime3);
+    @include animation-fill-mode(forwards);
+    display: block;
+}
+.hide {
+    opacity: 0;
+}
+
+
+/* ----------------------- RESPONSIVE ----------------------- */
+
+@media screen and (max-width: 2000px) {
+    #ville {
+        background-size:120%;
+    }
+    #transporteur {
+        background-size:66%;
+        height: 450px;
+    }
+    #observatoire {
+        background-size:110%;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    #homecontainer {
+        max-width: 80%;
+    }
+}
+
+@media screen and (max-width: 1600px) {
+    #ville {
+        width:65%;
+    }
+    #transporteur {
+        height: 370px;
+    }
+}
+
+
+@media screen and (max-width: $normal-desktop) {
+
+    .custom {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .container {
+        padding-top: 140px;
+    }
+
+    #homecontainer {
+        padding: 0 30px;
+    }
+    #home {
+        width: 340px;
+    }
+
+}
+
+@media screen and (max-width: 1023px) {
+    #ville {
+        width:100%;
+        background-size:105%;
+        position: initial;
+        margin-bottom: 0px;
+        height: 600px;
+    }
+    #observatoire {
+        background-size:90%;
+        margin-left: 2%;
+    }
+    #transporteur {
+        background-size: 60%;
+    }
+    #home {
+        width:80%;
+        position: initial;
+        height: initial;
+        padding-top: 140px;
+        margin: auto;
+        text-align: center;
+
+        h1 {
+            text-align: center;
+        }
+    }
+    .nuage {
+        display:none;
+    }
+    #homecontainer {
+        padding: 0;
+    }
+    .sky {
+        position: initial;
+    }
+
+    #animachine {
+        height:160px;
+
+        img {
+            width:210px;
+        }
+    }
+}
+
+@media screen and (max-width: $small-desktop) {
+
+    #ville {
+        height: 530px;
+    }
+}
+
+@media screen and (max-width: $normal-mobile) {
+
+    #ville {
+        height: 280px;
+    }
+}

@@ -1,0 +1,18 @@
+.button-normal {
+  font-size:22px;
+  font-family: $font-titles;
+  font-weight: $bold;
+  width: 280px;
+  padding:14px;
+  color: $darkblue;
+  display: inline-block;
+  border: $bordersize solid $darkblue;
+  @include transition-1;
+
+  &:hover {
+    border-color: $red;
+    color: $red;
+    @include transform(scale(1.02));
+    @include box-shadow(0 0 20px 0 $greyopacity2);
+  }
+}

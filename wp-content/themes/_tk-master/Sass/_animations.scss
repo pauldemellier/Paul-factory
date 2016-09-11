@@ -1,0 +1,52 @@
+@mixin animation-pop {
+  @include animation(pop ease-in-out $fasttime3);
+  @include animation-iteration-count(1);
+  @include transform-origin(50% 50%);
+}
+
+@include keyframes(pop){
+  0% {
+    opacity:0;
+    @include transform(scaleX(0.00) scaleY(0.00));
+  }
+  50% {
+    opacity:0.5;
+    @include transform(scaleX(1.15) scaleY(1.15));
+  }
+  85% {
+    opacity:0.9549544117780269;
+    @include transform(scaleX(0.9) scaleY(0.9));
+  }
+  100% {
+    opacity:1;
+    
+    @include transform(scaleX(1.00) scaleY(1.00));
+  }
+}
+
+
+@mixin animation-pop-2 {
+  @include animation(pop-2 ease-in-out $fasttime2);
+  @include animation-iteration-count(1);
+  @include transform-origin(50% 50%);
+}
+
+@include keyframes(pop-2){
+  0% {
+    opacity:0;
+    @include transform(scaleX(.8) scaleY(.8));
+  }
+  50% {
+    opacity:0.5;
+    @include transform(scaleX(1.05) scaleY(1.05));
+  }
+  85% {
+    opacity:0.9549544117780269;
+    @include transform(scaleX(0.98) scaleY(0.98));
+  }
+  100% {
+    opacity:1;
+    
+    @include transform(scaleX(1.00) scaleY(1.00));
+  }
+}

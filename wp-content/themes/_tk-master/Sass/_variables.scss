@@ -1,0 +1,68 @@
+/* ----------------------- COULEURS PRINCIPALES ----------------------- */
+
+$darkblue:      #1b1346; /*bleu*/  /* ancien marron 483426 */
+$red:           #D83F34; /*rouge*/
+
+$grey1:       #FBFAFB; /*gris fond*/
+$grey2:       #F6F6F8; /* gris footer */
+$grey3:       #F2F1F4;
+$grey4:       #EEEDF1;
+$mediumblue:  #B4B1C3;
+
+$greyopacity05: rgba($darkblue, 0.05);
+$greyopacity1: rgba($darkblue, 0.1);
+$greyopacity2: rgba($darkblue, 0.2);
+$greyopacity4: rgba($darkblue, 0.4);
+
+/* ----------------------- FONTS ----------------------- */
+
+$font-texts: 'proxima', sans-serif;
+$font-titles: 'Newslab', sans-serif;
+
+$fontsize:  16px;
+
+$regular: 400;
+$bold:  600;
+$black:   900;
+
+/* ----------------------- BREAK POINTS ----------------------- */
+
+$large-desktop:    1300px;
+$normal-desktop:  1100px;
+$bootstrap-ld:  1200px;
+$bootstrap-md:  992px;
+$bootstrap-sm:  992px;
+$bootstrap-xs:  768px;
+$small-desktop:   900px;
+
+$tablet:          768px;
+$tablet-minus:    767px;
+
+$large-mobile:    560px;
+$normal-mobile:   450px;
+$small-mobile:    320px;
+
+/* ----------------------- TAILLE STRUCTURE ----------------------- */
+
+$largeur:         1400px; /* largeur du site */
+$maxwidth:        950px;
+
+$padding-cote:    50px; /* pour les côtés du site */
+$padding-finpage: 140px;
+$padding-text:    50px;
+
+$bordersize:      3px;
+$gutter:          30px;
+$gutter-small:    15px;
+
+$radius-size:     3px;
+
+/* ----------------------- TEMPS  ----------------------- */
+
+$fasttime1   : .1s;
+$fasttime15  : .15s;
+$fasttime2   : .2s;
+$fasttime3   : .3s;
+$fasttime4   : .4s;
+$normaltime1 :  1s;
+$normaltime2 :  2s;

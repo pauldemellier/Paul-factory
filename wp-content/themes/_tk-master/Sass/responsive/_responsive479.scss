@@ -1,0 +1,29 @@
+@media screen and (max-width: 479px) {/* ------------------------- 479 ---------- */
+
+	ul#menu-services {
+		padding-bottom:10px;
+
+		.services {
+			width: 50%;
+		}
+
+		li:nth-child(1), li:nth-child(2) {
+			height: 185px;
+		} 
+		.serv {
+			width: 120px;
+			height: 120px;
+		}
+		.serv2 {
+			width: 116px;
+			height: 116px;
+		}
+	}
+
+	.error-container #navigation li {
+			display: block;
+			padding: 8px;
+	}
+
+
+}

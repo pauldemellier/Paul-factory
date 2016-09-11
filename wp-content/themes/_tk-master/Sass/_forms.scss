@@ -1,0 +1,65 @@
+*:focus {
+  outline: 0;
+}
+
+input[type="submit"] {
+  @extend .button-normal;
+  background: none;
+
+  &::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: red;
+  }
+}
+
+input[type="text"], input[type="email"], textarea {
+  padding:14px;
+  color: $darkblue;
+  border: $bordersize solid $greyopacity05;
+  background: none;
+  @include transition-2;
+  width: 100%;
+
+  &:focus, &.wpcf7-not-valid:focus {
+    border-color: white;
+    background: white;
+    @include transform(scale(1.02));
+    @include box-shadow(0 0 20px 0 $greyopacity2);
+  }
+
+  &.wpcf7-not-valid {
+    background: rgba($red, .1);
+  }
+
+}
+
+::-webkit-input-placeholder, :-moz-placeholder, ::-moz-placeholder, :-ms-input-placeholder {
+  color: $greyopacity4;
+}
+
+/* ------ ERREURS ------ */
+
+span.wpcf7-not-valid-tip {
+  display: none;
+}
+
+div.wpcf7-validation-errors {
+  border: none;
+  padding: 10px 20px;
+  background: rgba($red, .1);
+  font-weight: $bold;
+  color: $red;
+  border-radius: $radius-size;
+  margin: 0;
+}
+
+div.wpcf7 img.ajax-loader {
+  position: absolute;
+  right: 15px;
+  top: 14px;
+  width: 30px;
+
+}
+

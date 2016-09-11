@@ -1,0 +1,341 @@
+#contactleft {
+    float: left;
+    @include box;
+    width: 77%;
+    padding-right: 5%;
+    /*border-right:solid 1px $greyopacity2;*/
+}
+
+#top {
+    #topleft {
+        float: left;
+        @include box;
+        width: 77%;
+        padding-right: 5%;
+        padding-bottom: 50px;
+    }
+    #topright {
+        width: 23%;
+        @include box;
+        float: right;
+    }
+}
+#title-contact {
+    padding-top:40px;
+}
+
+#contactright {
+    width: 23%;
+    @include box;
+    vertical-align: top;
+    text-align: left;
+    float: right;
+
+    #mapandtext img {
+        padding: 20px 0;
+        max-width: 160px;
+    }
+}
+
+#animachine {
+    @include animation(machine 8.0s ease-in-out);
+    @include animation-iteration-count(infinite);
+    height:80px;
+    margin-left: -30px;
+
+    img {
+        width:252px;
+    }
+}
+
+
+/* ----------------------- FORM ----------------------- */
+
+input, textarea {
+    font-family: $font-texts !important;
+    font-size:18px;
+    font-weight:$light;
+    border-radius: 4px;
+    border: $bordersize solid transparent;
+    width:100%;
+    color: $darkblue;
+    background-color: white;
+    padding: 15px;
+    @include box;
+    display:inline-block;
+    -webkit-font-smoothing: antialiased;
+    @include transition(all $fasttime2);
+    margin-bottom: 30px;
+    line-height: 1.6em;
+    @include box-shadow(0 0 0 0 $greyopacity2);
+}
+textarea {
+    resize:none;
+}
+select {
+    font-family: $font-texts !important;
+    font-size:20px;
+    font-weight:$light;
+    border-radius: 3px;
+    border: $bordersize solid transparent;
+    width:100%;
+    padding: 15px;
+    @include box;
+    display:inline-block;
+    -webkit-font-smoothing: antialiased;
+    @include transition(all $fasttime2);
+    -webkit-appearance: none;
+    background-color:white;
+    margin-bottom:10px;
+}
+
+.checkbox {
+    width:50%;
+    float:left;
+
+    input{	
+        margin: initial;
+        width:30px;
+        float: left;
+        height: 50px;
+        border: none;
+        margin-right: 10px;
+    }
+    .wpcf7-list-item-label {
+        margin-top: 11px;
+        float: left;
+    }
+}
+
+input.send {
+    background-color: $red;
+    color: white;
+    @include bouton;
+    width:35%;
+    float: right;
+    -webkit-appearance: none;
+    font-family: $font-texts !important;
+    font-size: 20px;
+    line-height: 1.2em;
+    @include transition(all $fasttime1 cubic-bezier(0.000, 0.505, 0.575, 1.000));
+    @include box-shadow(0 0 0 0 $greyopacity1);
+    display: inline-block;
+
+    &:hover {
+        @include boutonhover;
+        cursor:pointer;
+        @include transform(scale(1.05,1.05));
+        @include box-shadow(0 0 20px 0 $greyopacity1);
+    }   
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: $greyopacity4;
+    font-weight: $light;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: $greyopacity4;
+    font-weight: $light;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: $greyopacity4;
+    font-weight: $light;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: $greyopacity4;
+    font-weight: $light;
+}
+
+textarea:focus, input:focus, select:focus {
+    border: $bordersize solid $greyopacity2;
+    outline: 0;
+    
+
+}
+input[type="text"]:focus, input[type="email"]:focus {
+    @include transform(scale(1.02,1.1));
+    @include box-shadow(0 0 20px 0 $greyopacity1);
+}
+textarea:focus {
+    @include transform(scale(1.015, 1.025));
+    @include box-shadow(0 0 20px 0 $greyopacity1);
+}
+
+
+input.send:focus {
+    border: $bordersize solid transparent;
+}
+input.send:active {
+    background-color: $greyopacity5;
+}
+
+input.name, input.email {
+    width: 48%;
+    margin-bottom:30px;
+    float:left;
+}
+input.name {
+    margin-right:4%;
+}
+
+textarea.message {
+    height:300px;
+}
+
+.wpcf7-not-valid {
+    border: $bordersize solid $red;
+}
+
+.wpcf7-validation-errors {
+    width: 100%;
+    float: left;
+    text-align: right;
+    color: $red;
+}
+
+.form-loader {
+
+    img {
+        float: right;
+        margin-top: 23px;
+        margin-right: 20px;
+        width: 10px;
+        @include animation(loadercustom infinite linear $normaltime2);
+        position: initial;
+    }
+}
+
+.wpcf7-mail-sent-ok {
+    width:100%;
+    padding: 15px;
+    box-sizing: border-box;
+    border-radius: 3px;
+    background-color: $lesscleargrey;
+}
+
+.screen-reader-response {
+    display: none;
+}
+
+#contact_results .success {
+    background: $lesscleargrey;
+    padding: 20px 25px;
+    border: none;
+    font-weight: $gras;
+    color: $darkblue;
+    border-radius: 3px;
+}
+
+.fadeOutDown {
+    @include animation(fadeOutDown 0.5s cubic-bezier(0.215, 0.610, 0.355, 1.000));
+}
+
+@include keyframes (fadeOutDown) {
+    0% {
+        opacity: 0;
+        transform: translate(0,-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
+/* ----------------------- RESPONSIVE ----------------------- */
+
+@media screen and (max-width: $small-desktop) {
+    #animachine {
+        margin-top: 100px;
+
+        img {
+            width: 220px;
+        }
+    }
+
+}
+
+@media screen and (max-width: $tablet) {
+    #mapandtext {
+        width: 400px;
+        margin: auto;
+
+        div {
+            float: left;
+        }
+    }
+    #contactright #mapandtext img {
+        max-width: 150px;
+    }
+    #contactright {
+        padding-left: 0px;
+        padding-top: 50px;
+        width: 100%;
+
+        #mapandtext img {
+            padding:0;
+        }
+    }
+
+}
+@media screen and (max-width: $tablet-minus) {
+    #topright {
+        display: none;
+    }
+    #top #topleft {
+        width: 100%;
+        padding-right: 0;
+        padding-bottom: 20px;
+    }
+    #title-contact {
+        padding-top: 0;
+    }
+}
+
+
+@media screen and (max-width: $normal-mobile) {
+
+    #contactright {
+        text-align: center;
+
+        #mapandtext img {
+            padding: 20px 0;
+        }
+    }
+    #mapandtext {
+        width: 100%;
+    }
+    #mapandtext div {
+        float: none;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    #contactright div:nth-child(2) {
+        width: 100%;
+    }
+    .checkbox {
+        width: 100%;
+    }
+
+}
+@media screen and (max-width: $large-mobile) {
+    input.send {
+        margin-bottom: 10px;
+    }
+    input.name, input.email, input.send, .post-intro .data div {
+        width: 100%;
+        float: none;
+    }
+    p.form-loader {
+        text-align: center;
+        margin: 0;
+    }
+    .form-loader img {
+        float: none;
+        margin: auto;
+    }
+    .wpcf7-validation-errors {
+        text-align: center;
+    }
+}
+

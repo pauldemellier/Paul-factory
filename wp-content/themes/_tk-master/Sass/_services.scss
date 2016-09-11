@@ -1,0 +1,192 @@
+@mixin boxsize{
+    @include box;
+    float: left;
+}
+.text {
+    @include boxsize;
+    padding-right:$padding-text;
+    width:60%;
+    vertical-align:top;
+}
+.service {
+    padding-left:$padding-text;
+    @include boxsize;
+    vertical-align:top;
+    width:50%;
+}
+.logiciels {
+    padding-left:$padding-text;
+    @include boxsize;
+    width:50%;
+}
+.boxservice {
+    border-left:solid 1px $lines;
+    width:40%;
+    @include boxsize;
+
+    ul {
+        padding-left: 20px;
+    }
+}
+
+/* MENU SERVICES */
+ul#menu-services { 
+    list-style: none;
+    padding:0;
+    text-align:center;
+    padding-bottom: 30px;
+    border-bottom: solid 1px $lines;
+    margin: 0;
+    font-size: 16px;
+    font-weight: $gras;
+    text-transform: uppercase;
+    color: $greyopacity3;
+    max-width: 1260px;
+    margin: auto;
+
+    li {
+        display:inline;
+    }
+    .services {
+        float: left;
+        width:25%;
+        @include transition(all $fasttime1 ease-in-out);
+
+        img {
+            width:100%;
+        }
+    }
+    .services:hover {
+        color: $darkblue;
+        cursor:  pointer;
+    }
+    .services:hover .serv {
+        border:solid $bordersize $greyopacity1;
+        @include animation(zoom $fasttime1 ease);
+    }
+    .serv:active {
+        background-color: $greyopacity05;
+        color: $darkblue;
+        border:solid $bordersize transparent;
+    }
+    .serv {
+        border-radius: 50%;
+        width:220px;
+        height:220px;
+        margin-bottom: 25px;
+        margin-left: auto;
+        margin-right: auto;
+        background-position:center;
+        background-repeat: no-repeat;
+        border: $bordersize solid transparent;
+        @include transition(all $fasttime1 ease-in-out);
+    }
+}
+
+.identite div{
+    @include background-image-retina(images/identite2, png, 160px, 160px);
+}
+.illustration div{
+    @include background-image-retina(images/illustration2, png, 160px, 160px);
+}
+.edition div{
+    @include background-image-retina(images/edition2, png, 160px, 160px);
+}
+.webdesign div{
+    @include background-image-retina(images/webdesig2, png, 160px, 160px);
+}
+
+.box {
+    padding-top:$padding-text;
+    max-width: 1150px;
+    margin: auto;
+}
+.display {
+    display:block;
+}
+
+.active {
+    color: $red !important;
+
+    div {
+        background-color: $red;
+    }
+
+}
+.pointerevent {
+    pointer-events: none;
+}
+.ajax-loader {
+    width: 20px;
+    margin: auto;
+    @include animation(loadercustom infinite linear 2s);
+    margin-top: 100px;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+
+/* ----------------------- RESPONSIVE ----------------------- */
+
+@media screen and (max-width: $normal-desktop) {
+
+    ul#menu-services {
+
+        .serv {
+            background-size: 72%;
+            width: 190px;
+            height: 190px;
+        }
+        .serv2 {
+            width: 186px;
+            height: 186px;
+        }
+    }
+
+}
+
+@media screen and (max-width: $small-desktop) {
+
+    ul#menu-services {
+
+        .serv {
+            background-size: 72%;
+            width: 160px;
+            height: 160px;
+        }
+        .serv2 {
+            width: 156px;
+            height: 156px;
+        }
+    }
+}
+
+@media screen and (max-width: $tablet) {
+
+    ul#menu-services {
+        h2 {
+            font-size: 22px;
+        }
+    }
+}
+@media screen and (max-width: $large-mobile) {
+
+    ul#menu-services {
+        h2 {
+            font-size: 18px;
+        }
+    }
+}
+
+@media screen and (max-width: $normal-mobile) {
+
+    .service {
+        width: 48%;
+        padding-left: 0px;
+    }
+    .logiciels {
+        padding-left: 4%;
+        width: 48%;
+    }
+}

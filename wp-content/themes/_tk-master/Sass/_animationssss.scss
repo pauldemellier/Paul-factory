@@ -1,0 +1,335 @@
+/* ----------------------- HEADER ----------------------- */
+
+
+@include keyframes(logo) {
+    0% { @include transform(scale(1));
+        @include animation-timing-function(ease-out); }
+    50% { @include transform(scale(0.92)); }
+    100% { @include transform(scale(1)); }
+}
+
+@include keyframes(flag) {
+    0% {
+        @include transform(scale(0.85));
+        @include animation-timing-function(ease-in);
+    }  
+    60% {
+        @include transform(scale(1.07));
+        @include animation-timing-function(ease);
+    }  
+    100% { @include transform(scale(1)); }
+}
+
+@include keyframes(survol) {
+    from { @include transform(scale(1)); }
+    to { @include transform(scale(1.05)); }
+}
+
+@include keyframes(scroll) {
+    0% {
+        @include animation-timing-function(cubic-bezier(0.895, 0.030, 0.685, 0.220));
+        @include transform(translateY(0px));
+    }
+    50% {
+        @include transform(translateY(10px));
+        @include animation-timing-function(cubic-bezier(0.165, 0.840, 0.440, 1.000));
+    }
+    100% {
+        @include transform(translateY(0px));
+    }
+}
+
+/* ----------------------- CONTENT ANIMATION ----------------------- */
+
+.animated { 
+    @include animation-duration($fasttime3);
+    @include animation-fill-mode(both);
+    @include animation-delay($fasttime3);
+}
+
+.appearbottom, .appeartop {
+    opacity:0;
+}
+
+.delay1 {
+    @include animation-delay(0.4s);
+}
+.delay2 {
+    @include animation-delay(0.5s);
+}
+.delay3 {
+    @include animation-delay(0.6s);
+}
+
+/* ----- APPEAR BOTTOM ----- */
+
+@include keyframes(appearbottom) { 
+    0% { 
+        opacity: 0; 
+        @include transform(translateY(-50px));
+        @include animation-timing-function(cubic-bezier(0.165, 0.840, 0.440, 1.000));
+    }
+    60% {
+        @include transform(translateY(5px));
+        @include animation-timing-function(cubic-bezier(0.550, 0.085, 0.680, 0.530));
+    }
+    100% {
+        opacity: 1; 
+        @include transform(translateY(0px)); 
+    } 
+} 
+.appearbottom.go { 
+    @include animation-name(appearbottom);
+}
+
+@include keyframes(appearbottom2) { 
+    0% { 
+        opacity: 0; 
+        @include transform(translateY(-50px));
+        @include animation-timing-function(cubic-bezier(0.165, 0.840, 0.440, 1.000));
+    }
+    100% {
+        opacity: 1; 
+        @include transform(translateY(0px)); 
+    } 
+} 
+.appearbottom.go { 
+    @include animation-name(appearbottom);
+}
+
+/* ----- NUAGE ACCUEIL ----- */
+
+@include keyframes(slidedown) { 
+    0% { 
+        opacity: 1; 
+        @include transform(translateY(0px));
+    }
+    100% {
+        opacity: 0; 
+        @include transform(translateY(50px)); 
+    } 
+}
+@include keyframes(slideup) { 
+    0% { 
+        opacity: 0; 
+        @include transform(translateY(50px));
+    }
+    100% {
+        opacity: 1; 
+        @include transform(translateY(0px)); 
+    } 
+}
+
+
+/* ----- APPEAR TOP ----- */
+
+@include keyframes(appeartop) { 
+    0% { 
+        opacity: 1; 
+        @include transform(translateY(0px));
+        @include animation-timing-function(cubic-bezier(0.165, 0.840, 0.440, 1.000));
+    }
+    60% {
+        @include transform(translateY(-55px));
+        @include animation-timing-function(cubic-bezier(0.550, 0.085, 0.680, 0.530));
+    }
+    100% {
+        opacity: 0; 
+        @include transform(translateY(50px)); 
+    } 
+}
+
+@include keyframes(nuagefade) { 
+    0% { 
+        opacity: 1; 
+        @include transform(translateY(0px));
+    }
+    100% {
+        opacity: 0; 
+        @include transform(translateY(100px)); 
+    } 
+}
+
+@include keyframes(appeartop-reverse) { 
+    0% { 
+        opacity: 1; 
+        @include transform(translateY(0px));
+    }
+    40% {
+        opacity: 1;
+        @include transform(translateY(-5px));
+        @include animation-timing-function(cubic-bezier(0.550, 0.085, 0.680, 0.530));
+    }
+    100% {
+        opacity: 0; 
+        @include transform(translateY(50px));
+        @include animation-timing-function(cubic-bezier(0.165, 0.840, 0.440, 1.000));
+    } 
+}
+
+.appeartop.go { 
+    @include animation-name(appeartop);
+}
+
+
+/* ----- APPEAR TOP LIGHT ----- */
+
+@include keyframes(appeartoplight) { 
+    0% { 
+        opacity: 0; 
+        @include transform(translateY(20px));
+        @include animation-timing-function(cubic-bezier(0.165, 0.840, 0.440, 1.000));
+    }
+    60% {
+        opacity: 1;
+        @include transform(translateY(-1px));
+        @include animation-timing-function(cubic-bezier(0.550, 0.085, 0.680, 0.530));
+    }
+    100% {
+
+        @include transform(translateY(0px)); 
+    } 
+}
+
+/* ----------------------- BULLES ----------------------- */
+
+
+@include keyframes(zoom) {
+    0% { @include transform(scale(1)); }
+    50% { @include transform(scale(0.95)); }
+    100% { @include transform(scale(1)); }
+}
+
+
+/* ----------------------- SOCIAL LINKS ----------------------- */
+
+
+@include keyframes(social) {
+    0% { @include transform(scale(0)); }
+    100% { @include transform(scale(1)); }
+}
+
+@include keyframes(social2) {
+    0% {
+        @include transform(scale(0));
+        @include animation-timing-function(cubic-bezier(0.550, 0.085, 0.680, 0.530));
+    }
+    10% {
+        @include transform(scale(0));
+    }
+    12% {
+        @include transform(scale(1));
+        @include animation-timing-function(cubic-bezier(0.215, 0.610, 0.355, 1.000));
+        opacity: 0.9;
+    }
+    100% {
+        @include transform(scale(1.6));
+        opacity: 0;
+    }
+}
+
+/* ----------------------- MACHINE PAGE CONTACT ----------------------- */
+
+@include keyframes(machine) {
+    0% 	{ @include transform(translateY(-190px) rotate(0deg)); }
+    50% {  @include transform(translateY(-185px) rotate(-1deg)); }
+    100% {  @include transform(translateY(-190px) rotate(-0deg)); }
+}
+
+/* ----------------------- LOADER CUSTOM ----------------------- */
+
+
+@include keyframes(loadercustom) {
+    0% {   @include transform(scale(0));
+        opacity: 1;
+        @include animation-timing-function(ease-in);    
+    }
+
+    100% {  @include transform(scale(1));
+        opacity: 0; 
+        }
+}
+/*
+@include keyframes(loadercustom) {
+0% {   @include transform(scale(0.9));
+opacity: 0.5; }
+
+10% {  @include transform(scale(0.9));
+opacity: 0.5; 
+@include animation-timing-function(ease-in); }
+
+50% {  @include transform(scale(1));
+opacity: 1; 
+@include animation-timing-function(ease-out); }
+
+100% { @include transform(scale(0.9));
+opacity: 0.5; }
+}
+*/
+
+@include keyframes(rotation) {
+    0% {   @include transform(rotate(0deg)); }
+
+    100% { @include transform(rotate(360deg)); }
+}
+
+/* ----------------------- KONAMI ----------------------- */
+
+@include keyframes(konami) { 
+    0% { 
+        @include transform(translateX(-400px));
+    }
+    100% {
+        @include transform(translateX(3000px)); 
+    } 
+}
+
+@include keyframes(insidekonami) { 
+    0% { 
+        @include transform(translateY(0px));
+        @include animation-timing-function(cubic-bezier(0.250, 0.460, 0.450, 0.940));     
+    }
+    25% {
+        @include transform(translateY(20px));
+        @include animation-timing-function(cubic-bezier(0.455, 0.030, 0.515, 0.955));
+    }
+    75% {
+        @include transform(translateY(-20px));
+        @include animation-timing-function(cubic-bezier(0.550, 0.085, 0.680, 0.530));
+    }
+    100% {
+        @include transform(translateY(0px)); 
+    }
+}
+
+/* ----------------------- NUAGES ----------------------- */
+
+@include keyframes(nuage) { 
+    0% { 
+        background-position-x: 0px;
+    }
+    100% {
+        background-position-x: 1000px; 
+    } 
+}
+
+/* ----------------------- NUAGES ----------------------- */
+
+@include keyframes(fade) { 
+    0% { 
+        opacity: 1;
+    }
+    100% {
+        opacity: 0; 
+    } 
+}
+@include keyframes(fadeIn) { 
+    0% { 
+        opacity: 0;
+    }
+    100% {
+        opacity: 1; 
+    } 
+}
+
+
